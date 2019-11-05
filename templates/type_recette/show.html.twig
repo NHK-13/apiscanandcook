@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TypeRecette{% endblock %}
+
+{% block body %}
+    <h1>TypeRecette</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ type_recette.id }}</td>
+            </tr>
+            <tr>
+                <th>NomTypeRecette</th>
+                <td>{{ type_recette.nomTypeRecette }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('type_recette_index') }}">back to list</a>
+
+    <a href="{{ path('type_recette_edit', {'id': type_recette.id}) }}">edit</a>
+
+    {{ include('type_recette/_delete_form.html.twig') }}
+{% endblock %}

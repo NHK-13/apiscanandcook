@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Recette{% endblock %}
+
+{% block body %}
+    <h1>Recette</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ recette.id }}</td>
+            </tr>
+            <tr>
+                <th>TitreRecette</th>
+                <td>{{ recette.titreRecette }}</td>
+            </tr>
+            <tr>
+                <th>SlugRecette</th>
+                <td>{{ recette.slugRecette }}</td>
+            </tr>
+            <tr>
+                <th>DescriptionRecette</th>
+                <td>{{ recette.descriptionRecette }}</td>
+            </tr>
+            <tr>
+                <th>IngredientsRecette</th>
+                <td>{{ recette.ingredientsRecette }}</td>
+            </tr>
+            <tr>
+                <th>IntructionRecette</th>
+                <td>{{ recette.intructionRecette }}</td>
+            </tr>
+            <tr>
+                <th>NbDePersonne</th>
+                <td>{{ recette.nbDePersonne }}</td>
+            </tr>
+            <tr>
+                <th>TimeCuisson</th>
+                <td>{{ recette.timeCuisson }}</td>
+            </tr>
+            <tr>
+                <th>Photo</th>
+                <td>{{ recette.photo }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('recette_index') }}">back to list</a>
+
+    <a href="{{ path('recette_edit', {'id': recette.id}) }}">edit</a>
+
+    {{ include('recette/_delete_form.html.twig') }}
+{% endblock %}

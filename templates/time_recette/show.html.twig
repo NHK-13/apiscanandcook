@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TimeRecette{% endblock %}
+
+{% block body %}
+    <h1>TimeRecette</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ time_recette.id }}</td>
+            </tr>
+            <tr>
+                <th>TimePreparation</th>
+                <td>{{ time_recette.timePreparation }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('time_recette_index') }}">back to list</a>
+
+    <a href="{{ path('time_recette_edit', {'id': time_recette.id}) }}">edit</a>
+
+    {{ include('time_recette/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New AllergeneRecette{% endblock %}
+
+{% block body %}
+    <h1>Create new AllergeneRecette</h1>
+
+    {{ include('allergene_recette/_form.html.twig') }}
+
+    <a href="{{ path('allergene_recette_index') }}">back to list</a>
+{% endblock %}

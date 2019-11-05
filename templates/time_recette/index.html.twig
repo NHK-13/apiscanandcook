@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TimeRecette index{% endblock %}
+
+{% block body %}
+    <h1>TimeRecette index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>TimePreparation</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for time_recette in time_recettes %}
+            <tr>
+                <td>{{ time_recette.id }}</td>
+                <td>{{ time_recette.timePreparation }}</td>
+                <td>
+                    <a href="{{ path('time_recette_show', {'id': time_recette.id}) }}">show</a>
+                    <a href="{{ path('time_recette_edit', {'id': time_recette.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('time_recette_new') }}">Create new</a>
+{% endblock %}
